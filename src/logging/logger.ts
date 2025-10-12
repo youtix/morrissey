@@ -1,5 +1,5 @@
-import { env, type LogLevel } from '../config/env';
 import pkg from '../../package.json';
+import { type LogLevel } from '../config/env';
 
 type Levels = Record<LogLevel, number>;
 const LEVELS: Levels = { debug: 10, info: 20, warn: 30, error: 40 } as const;

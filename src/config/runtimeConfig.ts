@@ -1,5 +1,5 @@
-import { logger } from '../logging/logger';
 import { env, type LogLevel } from './env';
+import { logger } from '../logging/logger';
 
 export type Weights = {
   notional: number;

@@ -1,5 +1,5 @@
-import { whaleWatcher } from './services/whaleWatcher';
 import { telegram } from './services/telegram';
+import { whaleWatcher } from './services/whaleWatcher';
 
 async function main() {
   telegram.attachWatcher(whaleWatcher);

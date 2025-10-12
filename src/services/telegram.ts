@@ -1,7 +1,7 @@
-import { logger } from '../logging/logger';
+import pkg from '../../package.json';
 import { env, type LogLevel } from '../config/env';
 import { config } from '../config/runtimeConfig';
-import pkg from '../../package.json';
+import { logger } from '../logging/logger';
 
 // Avoid runtime circular deps: define the watcher interface we need
 export interface WatcherControls {
