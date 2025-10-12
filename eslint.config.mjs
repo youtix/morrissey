@@ -2,6 +2,7 @@
 import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import prettier from 'eslint-config-prettier';
+import importPlugin from 'eslint-plugin-import';
 
 export default [
   {
@@ -16,13 +17,33 @@ export default [
         sourceType: 'module',
       },
     },
+    plugins: {
+      import: importPlugin,
+    },
     rules: {
       // TypeScript handles undefineds; disable core rule
       'no-undef': 'off',
-      // Allow temporary unused vars in this project
+      // Tighten TS rules (warn for now to avoid breaking build)
       'no-unused-vars': 'off',
-      '@typescript-eslint/no-unused-vars': 'off',
-      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/consistent-type-imports': 'error',
+      // Import ordering for readability
+      'import/order': [
+        'error',
+        {
+          groups: [
+            'builtin',
+            'external',
+            'internal',
+            ['parent', 'sibling', 'index'],
+            'object',
+            'type',
+          ],
+          'newlines-between': 'always',
+          alphabetize: { order: 'asc', caseInsensitive: true },
+        },
+      ],
     },
   },
   prettier,
