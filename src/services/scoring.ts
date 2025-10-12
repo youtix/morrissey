@@ -1,4 +1,5 @@
 import { toNumber as num } from '../utils/number';
+
 import type { Weights } from '../config/runtimeConfig';
 
 export const extractEquity = (portfolio: any, ch: any): number => {

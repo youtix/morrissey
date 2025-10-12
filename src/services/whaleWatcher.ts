@@ -1,9 +1,10 @@
-import { logger } from '../logging/logger';
-import type { WhaleHit } from '../types/trading';
-import { hyperliquid, type Trade } from '../clients/hyperliquidClient';
-import { telegram } from './telegram';
 import { extractEquity, scoreFrom, countPositions, countFillsWithin } from './scoring';
+import { telegram } from './telegram';
+import { hyperliquid, type Trade } from '../clients/hyperliquidClient';
 import { config } from '../config/runtimeConfig';
+import { logger } from '../logging/logger';
+
+import type { WhaleHit } from '../types/trading';
 
 export class WhaleWatcherService {
   private subscriptions = new Set<string>();

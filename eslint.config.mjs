@@ -1,8 +1,8 @@
 // ESLint Flat Config for Bun + TypeScript
 import js from '@eslint/js';
-import tseslint from 'typescript-eslint';
 import prettier from 'eslint-config-prettier';
 import importPlugin from 'eslint-plugin-import';
+import tseslint from 'typescript-eslint';
 
 export default [
   {
