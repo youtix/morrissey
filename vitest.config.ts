@@ -9,15 +9,20 @@ export default defineConfig({
         singleThread: true,
       },
     },
+    // Keep tests isolated and readable without per-file boilerplate
+    mockReset: true,
+    restoreMocks: true,
+    clearMocks: true,
     coverage: {
       provider: 'v8',
       reporter: ['text', 'lcov'],
       thresholds: {
-        lines: 0,
-        functions: 0,
-        branches: 0,
-        statements: 0,
+        lines: 59,
+        functions: 59,
+        branches: 59,
+        statements: 59,
       },
+      exclude: ['vitest.config.ts', 'eslint.config.mjs', 'commitlint.config.mjs', 'dist/**', 'src/types/**']
     },
   },
 });
