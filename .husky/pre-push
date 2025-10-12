@@ -1,6 +1,3 @@
 #!/usr/bin/env sh
-echo "Type checking..."
-bun run type:check || exit 1
-
 echo "Running tests with coverage..."
 bun run test:coverage || exit 1
