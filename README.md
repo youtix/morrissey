@@ -17,7 +17,7 @@ Telegram bot looking for insider trading, built with TypeScript and Bun.
 - Lint: ESLint (tightened TS rules) + Prettier + import ordering
 - Hooks: Husky + lint-staged, commitlint, Commitizen
 - CI: GitHub Actions (lint, type-check, test, build)
-- Security: CodeQL, Dependabot
+- Security: CodeQL, Renovate
 - Releases: semantic-release to GitHub Releases
 
 ## Quick start
