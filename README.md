@@ -1,6 +1,16 @@
-# morrissey
+![CI](https://github.com/youtix/morrissey/actions/workflows/ci.yml/badge.svg)
+![License](https://img.shields.io/github/license/youtix/morrissey)
+![Bun](https://img.shields.io/badge/runtime-bun-blue?logo=bun)
+![TypeScript](https://img.shields.io/badge/language-typescript-blue?logo=typescript)
+![Vitest](https://img.shields.io/badge/test-vitest-6E9F18?logo=vitest)
 
-Whale trade watcher and Telegram notifier, built with TypeScript and Bun.
+# Morrissey
+
+<img width="225" height="300" alt="image" src="https://github.com/user-attachments/assets/1645b2d4-7381-4e8f-8706-34218a35a59b" />
+
+-Evan Morrissey
+
+Check for trading insider, built with TypeScript and Bun.
 
 - Runtime & PM: Bun 1.2.x
 - Tests: Vitest (+ coverage)
