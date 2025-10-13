@@ -1,0 +1,48 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":semanticCommits",
+    ":semanticCommitTypeAll(chore)",
+    ":semanticCommitScope(deps)"
+  ],
+  "dependencyDashboard": true,
+  "branchPrefix": "renovate/",
+  "labels": ["dependencies", "renovate"],
+  "prConcurrentLimit": 10,
+  "prHourlyLimit": 5,
+  "rangeStrategy": "auto",
+  "schedule": ["before 6am on monday"],
+  "rebaseWhen": "behind-base-branch",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 6am on monday"]
+  },
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "groupName": "all non-major dependencies"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": [
+        "^@types/",
+        "^eslint",
+        "^prettier$",
+        "^typescript$",
+        "^vitest$",
+        "^husky$",
+        "^semantic-release$",
+        "commitlint",
+        "cz-"
+      ],
+      "groupName": "dev tools"
+    }
+  ],
+  "postUpgradeTasks": {
+    "commands": ["bun install"],
+    "fileFilters": ["bun.lock", "bun.lockb"],
+    "executionMode": "update"
+  },
+  "allowedPostUpgradeCommands": ["^bun install$"]
+}
