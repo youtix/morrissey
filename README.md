@@ -10,7 +10,7 @@
 
 -Evan Morrissey
 
-Check for trading insider, built with TypeScript and Bun.
+Telegram bot looking for insider trading, built with TypeScript and Bun.
 
 - Runtime & PM: Bun 1.2.x
 - Tests: Vitest (+ coverage)
